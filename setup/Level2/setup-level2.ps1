@@ -52,7 +52,9 @@ else
 	Write-Host "Creating Resource Group, Web Hosting Plan, Site and SQL Server..." -ForegroundColor Green 
 	try 
 	{ 
-		New-AzureResourceGroup -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -location1 $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
+		Login-AzureRmAccount
+        Select-AzureRmSubscription
+        New-AzureRMResourceGroup -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -location1 $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
 		[System.Console]::Beep(400,1500)
 	}
 	catch 
