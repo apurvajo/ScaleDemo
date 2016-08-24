@@ -54,7 +54,7 @@ else
 	{ 
 		Login-AzureRmAccount
         	Select-AzureRmSubscription -subscriptionID ef90e930-9d7f-4a60-8a99-748e0eea69de
-        	New-AzureRmResourceGroupDeployment -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -Location1 $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
+        	New-AzureRmResourceGroupDeployment -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -Location $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
 		[System.Console]::Beep(400,1500)
 	}
 	catch 
