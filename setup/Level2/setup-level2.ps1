@@ -53,7 +53,7 @@ else
 	try 
 	{ 
 		Login-AzureRmAccount
-        Select-AzureRmSubscription
+        Select-AzureRmSubscription -subscriptionID ef90e930-9d7f-4a60-8a99-748e0eea69de
         New-AzureRMResourceGroup -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -location1 $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
 		[System.Console]::Beep(400,1500)
 	}
