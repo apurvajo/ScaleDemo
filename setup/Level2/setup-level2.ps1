@@ -39,7 +39,7 @@ else
 
 	#Connection Strings
 	$primaryDB = New-Object Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.ConnStringInfo
-    $secondaryDB = New-Object Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.ConnStringInfo
+    	$secondaryDB = New-Object Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.ConnStringInfo
 	$Site1Storage = New-Object Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.ConnStringInfo
 
 	#Provition Resources From Template
@@ -53,8 +53,8 @@ else
 	try 
 	{ 
 		Login-AzureRmAccount
-        Select-AzureRmSubscription -subscriptionID ef90e930-9d7f-4a60-8a99-748e0eea69de
-        New-AzureRMResourceGroup -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -location1 $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
+        	Select-AzureRmSubscription -subscriptionID ef90e930-9d7f-4a60-8a99-748e0eea69de
+        	New-AzureRmResourceGroupDeployment -name $RG_Name -location $RG_Location -TemplateFile .\templatelevel2.json -whp $WHP1_Name -location1 $WHP1_Location -siteName $WS1_Name -serverName $SQL1_Server
 		[System.Console]::Beep(400,1500)
 	}
 	catch 
